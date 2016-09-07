@@ -12,5 +12,10 @@
     "bitballoon": "^0.2.2",
     "meta-marked": "^0.4.2",
     "twig": "^0.9.5"
+  },
+  "scripts" : {
+    "test": "npm run build",
+    "build": "node build.js",
+    "deploy": "node deploy.js"
   }
 }

@@ -21,16 +21,11 @@
         <p>A year in London and Pyschosexual Somatic Therapy practitioner training</p>
       </div>
 
-      {# Posts #}
-      {% for post in posts %}
-        <h2>{{ post.meta.title }}</h2>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">{{ post.meta.date }}</h3>
-          </div>
-          <div class="panel-body">{{ post.html }}</div>
-        </div>
-      {% endfor %}
+      {# Hawkeye's posts #}
+      {% include 'posts.html.twig' with { posts: posts.hawkeye } %}
+
+      {# Jacqui's posts #}
+      {% include 'posts.html.twig' with { posts: posts.jacqui } %}
 
     </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
