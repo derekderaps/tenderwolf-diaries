@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "bitballoon": "^0.2.2",
+    "dateformat": "^1.0.12",
     "meta-marked": "^0.4.2",
     "twig": "^0.9.5"
   },
-  "scripts" : {
+  "scripts": {
     "test": "npm run build",
     "build": "node build.js",
     "deploy": "node deploy.js"
