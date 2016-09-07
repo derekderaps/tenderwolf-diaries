@@ -1,0 +1,16 @@
+{
+  "name": "tenderwolf",
+  "description": "The Tenderwolf Diaries",
+  "version": "1.0.0",
+  "author": "Hawkeye Tenderwolf",
+  "homepage": "http://tenderwolf.figroll.in",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "bitballoon": "^0.2.2",
+    "meta-marked": "^0.4.2",
+    "twig": "^0.9.5"
+  }
+}
