@@ -1,6 +1,6 @@
 {% for post in posts %}
   <h2>{{ post.meta.title }}</h2>
-  <div class="panel panel-default">
+  <div class="panel {{ post.panelStyle }}">
     <div class="panel-heading">
       <h3 class="panel-title">{{ post.meta.date }}</h3>
     </div>

@@ -12,8 +12,8 @@ var dateFormat = require('dateformat'),
     files;
 
 // Get blog posts.
-posts.hawkeye = getBlogPosts('./posts/hawkeye/');
-posts.jacqui  = getBlogPosts('./posts/jacqui/');
+posts.hawkeye = getBlogPosts('./posts/hawkeye/', 'primary');
+posts.jacqui  = getBlogPosts('./posts/jacqui/', 'success');
 posts.all     = posts.hawkeye.concat(posts.jacqui).sort(comparePostDates);
 
 // Render page template.
@@ -32,7 +32,7 @@ Twig.renderFile('index.html.twig', { posts: posts }, (err, html) => {
   });
 });
 
-function getBlogPosts(path) {
+function getBlogPosts(path, style) {
   var files        = fs.readdirSync(path),
       posts        = [],
       gitbookFiles = [
@@ -42,8 +42,10 @@ function getBlogPosts(path) {
   for (var i = 0, len = files.length; i < len; i++) {
     var file = files[i];
     if (file.endsWith('.md') && gitbookFiles.indexOf(file) === -1) {
-      var contents = fs.readFileSync(path + file, 'utf8');
-      posts.push(metaMarked(contents));
+      var contents = fs.readFileSync(path + file, 'utf8'),
+          post     = metaMarked(contents);
+      post.panelStyle = 'panel-' + style;
+      posts.push(post);
     }
   }
   return posts.sort(comparePostDates);
