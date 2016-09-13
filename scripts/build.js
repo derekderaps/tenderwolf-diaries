@@ -17,13 +17,13 @@ posts.jacqui  = getBlogPosts('./posts/jacqui/', 'success');
 posts.all     = posts.hawkeye.concat(posts.jacqui).sort(comparePostDates);
 
 // Render page template.
-Twig.renderFile('index.html.twig', { posts: posts }, (err, html) => {
+Twig.renderFile('./templates/index.html.twig', { posts: posts }, (err, html) => {
   if (err) {
     console.log(err);
     process.exit(1);
   }
   console.log('Rendered index.html.twig.')
-  fs.writeFile("build/index.html", html, function(err) {
+  fs.writeFile("./build/index.html", html, function(err) {
     if (err) {
       console.log(err);
       process.exit(1);
