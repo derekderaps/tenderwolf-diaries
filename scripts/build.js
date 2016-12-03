@@ -52,5 +52,7 @@ function getBlogPosts(path, style) {
 }
 
 function comparePostDates(a, b) {
-  return dateFormat(a.meta.date, 'isoDate') < dateFormat(b.meta.date, 'isoDate');
+  aDate = new Date(a.meta.date);
+  bDate = new Date(b.meta.date);
+  return bDate.getTime() - aDate.getTime();
 }
