@@ -13,7 +13,6 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "dateformat": "^1.0.12",
     "meta-marked": "^0.4.2",
     "twig": "^0.9.5"
   },

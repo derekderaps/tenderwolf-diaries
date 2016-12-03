@@ -4,8 +4,7 @@
  */
 
 // Instantiate dependencies and variables.
-var dateFormat = require('dateformat'),
-    fs         = require('fs'),
+var fs         = require('fs'),
     Twig       = require('twig'),
     metaMarked = require('meta-marked'),
     posts      = {},
