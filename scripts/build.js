@@ -52,5 +52,5 @@ function getBlogPosts(path, style) {
 }
 
 function comparePostDates(a, b) {
-  return dateFormat(a.meta.date, 'isoDate') > dateFormat(b.meta.date, 'isoDate');
+  return dateFormat(a.meta.date, 'isoDate') < dateFormat(b.meta.date, 'isoDate');
 }
