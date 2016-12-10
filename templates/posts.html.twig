@@ -1,13 +1,14 @@
-{% for post in posts %}
+{% for post in posts[type] %}
+  {% set postId = type ~ '-' ~ loop.index %}
   <div class="panel {{ post.panelStyle }}">
     <div class="panel-heading">
       <em style="float: right">{{ post.meta.date }}</em>
       <h2 style="font-size: 24px" class="panel-title">
-        <a href="#{{ loop.index }}" data-toggle="collapse">
+        <a href="#{{ postId }}" data-toggle="collapse">
           {{ post.meta.title }}
         </a>
       </h2>
     </div>
-    <div id="{{ loop.index }}" class="panel-body collapse">{{ post.html }}</div>
+    <div id="{{ postId }}" class="panel-body collapse">{{ post.html }}</div>
   </div>
 {% endfor %}
